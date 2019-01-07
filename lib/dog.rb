@@ -90,13 +90,14 @@ class Dog
     dog
   end
 
-#  def self.all
-#    @@all
-#  end
+  def self.find_by_name(name)
+    self.all.find {|dog| dog.name = name }
+  end
 
-#  def self.find_by_name(name)
-#    self.all.find {|dog| dog.name = name }
-#  end
+  def update
+    sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+    DB[:conn].execute(sql, self.name, self.album, self.id)
+  end
 
 
 end
