@@ -78,6 +78,7 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       dog_data = dog[0]
+      Dog.all.find {|dog| dog.id = dog_data[0]}
     else
       dog = self.create(name: name, breed: breed)
     end
