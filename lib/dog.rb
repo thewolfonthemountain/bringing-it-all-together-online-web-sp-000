@@ -82,7 +82,12 @@ class Dog
     dog
   end
 
+  def self.all
+    @@all
+  end
+  
   def self.find_by_name
+
 
 
 end
