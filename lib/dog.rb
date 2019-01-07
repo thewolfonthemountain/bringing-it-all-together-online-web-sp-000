@@ -80,9 +80,9 @@ class Dog
       dog_data = dog[0]
       found_dog = Dog.all.find {|dog| dog.name == dog_data[1]}
       if found_dog.nil?
-        binding.pry
         dog = Dog.new(dog_data[0], dog_data[1], dog_data[2])
       else
+        binding.pry
         found_dog
       end
     else
