@@ -37,9 +37,9 @@ class Dog
   end
 
   def save
-#      if self.id
-#        self.update
-#      else
+      if self.id
+        self.update
+      else
       sql = <<-SQL
         INSERT INTO dogs (name, breed)
         VALUES (?, ?)
@@ -78,12 +78,7 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       dog_data = dog[0]
-      dog = Dog.all.find {|dog| dog.name == dog_data[1]}
-      if dog.nil?
-        dog = Dog.new(dog_data[0], dog_data[1], dog_data[2])
-      else
-        dog
-      end
+      Dog.
     else
       dog = self.create(name: name, breed: breed)
     end
