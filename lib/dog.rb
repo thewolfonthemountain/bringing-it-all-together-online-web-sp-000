@@ -57,6 +57,7 @@ class Dog
       LIMIT 1
       SQL
     DB[:conn].execute(sql, id).map do |row|
+      binding.pry
       self.create(row)
     end.first
   end
