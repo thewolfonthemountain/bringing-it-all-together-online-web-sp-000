@@ -90,9 +90,10 @@ class Dog
     dog
   end
 
-  def self.find_by_name(name)
-    self.all.find {|dog| dog.name == name }
-  end
+#  def self.find_by_name(name)
+#    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
+#    
+#  end
 
   def update
     sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
