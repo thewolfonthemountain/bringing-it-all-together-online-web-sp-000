@@ -80,7 +80,7 @@ class Dog
       dog = self.create(name: name, breed: breed)
     else
       dog_data = dog[0]
-      Dog.all.find {|doggy| doggy.id == dog_data[0]}
+      dog = Dog.all.find {|doggy| doggy.id == dog_data[0]}
     end
     dog
   end
