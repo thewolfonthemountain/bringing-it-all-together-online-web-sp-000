@@ -89,7 +89,7 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ?", name)
     dog_data = dog[0]
     binding.pry
-    dog = Dog.all.find {|doggy| doggy.id == dog_data[0]}
+    dog = Dog.all.find {|doggy| doggy.name == dog_data[1]}
     dog
   end
 
