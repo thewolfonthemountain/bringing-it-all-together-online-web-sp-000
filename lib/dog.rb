@@ -87,10 +87,7 @@ class Dog
 
   def self.find_by_name(name)
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ?", name)
-    dog_data = dog[0]
-    binding.pry
-    dog = Dog.all.find {|doggy| doggy.name == dog_data[1]}
-    dog
+    Dog.new_from_db(dog[0])
   end
 
   def update
