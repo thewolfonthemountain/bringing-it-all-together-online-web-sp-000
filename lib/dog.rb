@@ -49,6 +49,8 @@ class Dog
     dog
   end
 
+
+
   def self.find_by_id(id)
     sql = <<-SQL
       SELECT *
@@ -58,7 +60,7 @@ class Dog
       SQL
     DB[:conn].execute(sql, id).map do |row|
       binding.pry
-      self.create(row)
+      self.create(id:row[0], name:row[1], breef:row[2])
     end.first
   end
 
