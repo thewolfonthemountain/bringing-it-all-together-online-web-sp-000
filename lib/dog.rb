@@ -92,7 +92,7 @@ class Dog
 
 #  def self.find_by_name(name)
 #    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
-#    
+#
 #  end
 
   def update
