@@ -9,7 +9,7 @@ class Dog
     @id = id
     @name = name
     @breed = breed
-
+    @@all << self
   end
 
   def self.create_table
@@ -81,6 +81,8 @@ class Dog
     end
     dog
   end
+
+  def self.find_by_name
 
 
 end
