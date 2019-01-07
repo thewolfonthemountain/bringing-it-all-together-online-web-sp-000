@@ -91,7 +91,7 @@ class Dog
   end
 
   def self.find_by_name(name)
-    self.all.find {|dog| dog.name = name }
+    self.all.find {|dog| dog.name == name }
   end
 
   def update
